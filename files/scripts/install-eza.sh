@@ -6,4 +6,4 @@ curl --fail --retry 15 --retry-all-errors -sSL -o /tmp/eza.tar.gz https://github
 tar zxf /tmp/eza.tar.gz -C /tmp
 sudo chmod +x /tmp/eza
 sudo chown root:root /tmp/eza
-sudo mv /tmp/eza /usr/local/bin/eza
+sudo mv /tmp/eza /usr/bin/eza
