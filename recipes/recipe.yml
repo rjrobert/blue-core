@@ -31,6 +31,7 @@ modules:
         - distrobox
         - nfs-utils
         - gcc
+        - zoxide
 
   - type: script
     scripts:
@@ -46,5 +47,8 @@ modules:
         - podman-auto-update.timer
         - cockpit.service
         - var-truenas.mount
+        - bootc-fetch-apply-updates.timer
+      disabled:
+        - rpm-ostreed-automatic.timer
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
