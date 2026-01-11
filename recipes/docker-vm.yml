@@ -1,0 +1,24 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: blue-core-docker-vm
+description: Docker VM with media management and Xen Orchestra.
+
+base-image: ghcr.io/ublue-os/ucore-minimal
+image-version: latest
+
+modules:
+  - from-file: common-modules.yml
+
+  - type: files
+    files:
+      - source: docker-vm/etc
+        destination: /etc
+
+  - type: script
+    scripts:
+      - generate-caddyfile.sh
+
+  - type: systemd
+    system:
+      enabled:
+        - caddy.socket

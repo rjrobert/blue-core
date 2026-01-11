@@ -1,0 +1,49 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+modules:
+  - type: files
+    files:
+      - source: common/etc
+        destination: /etc
+      - source: common/usr
+        destination: /usr
+
+  - type: dnf
+    repos:
+      copr:
+        - atim/starship
+    install:
+      packages:
+        - starship
+        - fish
+        - bat
+        - btop
+        - fastfetch
+        - neovim
+        - helix
+        - just
+        - distrobox
+        - nfs-utils
+        - gcc
+        - zoxide
+
+  - type: script
+    scripts:
+      - install-eza.sh
+
+  - type: chezmoi
+    repository: https://github.com/rjrobert/dotfiles
+
+  - type: systemd
+    system:
+      enabled:
+        - podman.socket
+        - cockpit.service
+        - podman-auto-update.timer
+        - bootc-fetch-apply-updates.timer
+        - var-truenas.mount
+      disabled:
+        - rpm-ostreed-automatic.timer
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully

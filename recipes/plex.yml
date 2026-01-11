@@ -1,0 +1,20 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+name: blue-core-plex
+description: Plex media server image.
+
+base-image: ghcr.io/ublue-os/ucore-minimal
+image-version: stable-nvidia-lts
+
+modules:
+  - from-file: common-modules.yml
+
+  - type: files
+    files:
+      - source: plex/etc
+        destination: /etc
+
+  - type: systemd
+    system:
+      enabled:
+        - plex.service

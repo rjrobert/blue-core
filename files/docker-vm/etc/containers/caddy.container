@@ -1,0 +1,27 @@
+[Unit]
+Description=Caddy Reverse Proxy
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+ContainerName=caddy
+Image=ghcr.io/caddybuilds/caddy-cloudflare:latest
+AutoUpdate=registry
+
+Environment=TZ=America/Los_Angeles
+EnvironmentFile=/etc/caddy/caddy.env
+
+Network=host
+
+Volume=/var/lib/caddy/data:/data
+Volume=/var/lib/caddy/config:/config
+Volume=/etc/caddy:/etc/caddy:ro
+
+SecurityLabelDisable=true
+
+[Service]
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+Also=caddy.socket

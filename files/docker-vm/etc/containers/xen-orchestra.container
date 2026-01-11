@@ -1,0 +1,27 @@
+[Unit]
+Description=Xen Orchestra Web UI
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+ContainerName=xen-orchestra
+Image=docker.io/ronivay/xen-orchestra:latest
+AutoUpdate=registry
+
+Label=caddy.subdomain=xo
+Label=caddy.port=8000
+
+Environment=HTTP_PORT=8080
+
+PublishPort=8000:8080
+
+Volume=/var/lib/xen-orchestra:/var/lib/xo-server
+Volume=/var/lib/redis:/var/lib/redis
+
+SecurityLabelDisable=true
+
+[Service]
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
