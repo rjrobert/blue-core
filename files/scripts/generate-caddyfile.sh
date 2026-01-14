@@ -1,6 +1,6 @@
 #!/bin/bash
 # Generate Caddyfile from container labels
-# Scans /etc/containers/*.container for caddy.subdomain and caddy.port labels
+# Scans /etc/containers/*.container for caddy.port labels and uses ContainerName as subdomain
 
 set -oue pipefail
 
@@ -27,13 +27,13 @@ EOF
 for container_file in "$CONTAINER_DIR"/*.container; do
   [ -f "$container_file" ] || continue
 
-  subdomain=$(grep -E "^Label=caddy\.subdomain=" "$container_file" | cut -d= -f3)
+  container_name=$(grep -E "^ContainerName=" "$container_file" | cut -d= -f2)
   port=$(grep -E "^Label=caddy\.port=" "$container_file" | cut -d= -f3)
 
-  if [[ -n "$subdomain" && -n "$port" ]]; then
+  if [[ -n "$container_name" && -n "$port" ]]; then
     cat >>"$CADDYFILE" <<EOF
 
-${subdomain}.{\$CADDY_DOMAIN} {
+${container_name}.{\$CADDY_DOMAIN} {
 	reverse_proxy localhost:${port}
 }
 EOF

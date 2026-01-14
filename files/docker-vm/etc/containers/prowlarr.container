@@ -8,7 +8,6 @@ ContainerName=prowlarr
 Image=lscr.io/linuxserver/prowlarr:latest
 AutoUpdate=registry
 
-Label=caddy.subdomain=prowlarr
 Label=caddy.port=9696
 
 Environment=PUID=1000

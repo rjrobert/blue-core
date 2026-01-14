@@ -4,11 +4,10 @@ Wants=network-online.target
 After=network-online.target
 
 [Container]
-ContainerName=xen-orchestra
+ContainerName=xen
 Image=docker.io/ronivay/xen-orchestra:latest
 AutoUpdate=registry
 
-Label=caddy.subdomain=xo
 Label=caddy.port=8000
 
 Environment=HTTP_PORT=8080

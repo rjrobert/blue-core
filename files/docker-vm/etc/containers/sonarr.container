@@ -9,7 +9,6 @@ ContainerName=sonarr
 Image=lscr.io/linuxserver/sonarr:latest
 AutoUpdate=registry
 
-Label=caddy.subdomain=sonarr
 Label=caddy.port=8989
 
 Environment=PUID=1000

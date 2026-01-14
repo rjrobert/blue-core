@@ -9,7 +9,6 @@ ContainerName=radarr
 Image=lscr.io/linuxserver/radarr:latest
 AutoUpdate=registry
 
-Label=caddy.subdomain=radarr
 Label=caddy.port=7878
 
 Environment=PUID=1000

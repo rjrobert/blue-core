@@ -9,7 +9,6 @@ ContainerName=sabnzbd
 Image=lscr.io/linuxserver/sabnzbd:latest
 AutoUpdate=registry
 
-Label=caddy.subdomain=sabnzbd
 Label=caddy.port=8080
 
 Environment=PUID=1000
