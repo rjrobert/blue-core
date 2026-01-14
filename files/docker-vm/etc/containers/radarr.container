@@ -15,7 +15,7 @@ Environment=PUID=1000
 Environment=PGID=1000
 Environment=TZ=America/Los_Angeles
 
-PublishPort=7878:7878
+Network=caddy.network
 
 Volume=/var/lib/radarr:/config
 Volume=/var/truenas:/truenas

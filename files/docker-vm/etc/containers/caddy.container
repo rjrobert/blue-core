@@ -11,7 +11,7 @@ AutoUpdate=registry
 Environment=TZ=America/Los_Angeles
 EnvironmentFile=/etc/caddy/caddy.env
 
-Network=host
+Network=caddy.network
 
 Volume=/var/lib/caddy/data:/data
 Volume=/var/lib/caddy/config:/config

@@ -14,6 +14,8 @@ Environment=PUID=1000
 Environment=PGID=1000
 Environment=TZ=America/Los_Angeles
 
+Network=caddy.network
+
 Volume=/var/config/bazarr:/config
 Volume=/var/truenas/media:/media
 

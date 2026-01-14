@@ -34,7 +34,7 @@ for container_file in "$CONTAINER_DIR"/*.container; do
     cat >>"$CADDYFILE" <<EOF
 
 ${container_name}.{\$CADDY_DOMAIN} {
-	reverse_proxy localhost:${port}
+	reverse_proxy ${container_name}:${port}
 }
 EOF
   fi

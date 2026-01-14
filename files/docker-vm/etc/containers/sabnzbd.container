@@ -15,7 +15,7 @@ Environment=PUID=1000
 Environment=PGID=1000
 Environment=TZ=America/Los_Angeles
 
-PublishPort=8080:8080
+Network=caddy.network
 
 Volume=/var/lib/sabnzbd:/config
 Volume=/var/truenas:/truenas

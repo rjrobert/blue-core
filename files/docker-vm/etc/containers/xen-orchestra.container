@@ -8,11 +8,9 @@ ContainerName=xen
 Image=docker.io/ronivay/xen-orchestra:latest
 AutoUpdate=registry
 
-Label=caddy.port=8000
+Label=caddy.port=8080
 
-Environment=HTTP_PORT=8080
-
-PublishPort=8000:8080
+Network=caddy.network
 
 Volume=/var/lib/xen-orchestra:/var/lib/xo-server
 Volume=/var/lib/redis:/var/lib/redis

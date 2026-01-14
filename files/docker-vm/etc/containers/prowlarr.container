@@ -14,7 +14,7 @@ Environment=PUID=1000
 Environment=PGID=1000
 Environment=TZ=America/Los_Angeles
 
-PublishPort=9696:9696
+Network=caddy.network
 
 Volume=/var/lib/prowlarr:/config
 
