@@ -1,0 +1,18 @@
+[Unit]
+Description=Dell iDrac Fan Controller
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+ContainerName=idrac-fan-controller
+Image=docker.io/tigerblue77/dell_idrac_fan_controller:latest
+AutoUpdate=registry
+
+Environment=TZ=America/Los_Angeles
+EnvironmentFile=/var/lib/idrac.env
+
+[Service]
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

@@ -17,7 +17,7 @@ Environment=TZ=America/Los_Angeles
 
 Network=caddy.network
 
-Volume=/var/lib/radarr:/config
+Volume=/var/config/radarr:/config
 Volume=/var/truenas:/truenas
 
 SecurityLabelDisable=true

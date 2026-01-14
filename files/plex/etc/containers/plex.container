@@ -10,15 +10,14 @@ ContainerName=plex
 Image=docker.io/plexinc/pms-docker:latest
 AutoUpdate=registry
 
-Environment=TZ=America/Los_Angeles
-Environment=PLEX_UID=1000
-Environment=PLEX_GID=1000
+EnvironmentFile=/var/lib/plexmediaserver/plex.env
+Environment=VERSION=docker
 
 Network=host
 
-#AddDevice=nvidia.com/gpu=all
+AddDevice=nvidia.com/gpu=all
 
-Volume=/var/lib/plexmediaserver:/config
+Volume=/var/config/plexmediaserver:/config
 Volume=/var/truenas:/truenas
 Tmpfs=/transcode
 

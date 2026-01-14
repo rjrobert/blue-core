@@ -13,8 +13,7 @@ EnvironmentFile=/etc/caddy/caddy.env
 
 Network=caddy.network
 
-Volume=/var/lib/caddy/data:/data
-Volume=/var/lib/caddy/config:/config
+Volume=/var/config/caddy:/data
 Volume=/etc/caddy:/etc/caddy:ro
 
 SecurityLabelDisable=true

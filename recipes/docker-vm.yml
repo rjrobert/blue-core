@@ -22,3 +22,4 @@ modules:
     system:
       enabled:
         - caddy.socket
+        - idrac-fan-controller.service

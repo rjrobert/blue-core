@@ -16,7 +16,7 @@ Environment=TZ=America/Los_Angeles
 
 Network=caddy.network
 
-Volume=/var/lib/prowlarr:/config
+Volume=/var/config/prowlarr:/config
 
 SecurityLabelDisable=true
 

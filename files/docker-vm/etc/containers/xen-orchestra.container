@@ -12,8 +12,8 @@ Label=caddy.port=8080
 
 Network=caddy.network
 
-Volume=/var/lib/xen-orchestra:/var/lib/xo-server
-Volume=/var/lib/redis:/var/lib/redis
+Volume=/var/config/xen/server:/var/lib/xo-server
+Volume=/var/config/xen/redis:/var/lib/redis
 
 SecurityLabelDisable=true
 

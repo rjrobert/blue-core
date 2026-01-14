@@ -17,7 +17,7 @@ Environment=TZ=America/Los_Angeles
 
 Network=caddy.network
 
-Volume=/var/lib/sonarr:/config
+Volume=/var/config/sonarr:/config
 Volume=/var/truenas:/truenas
 
 SecurityLabelDisable=true

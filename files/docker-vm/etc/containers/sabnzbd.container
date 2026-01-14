@@ -17,7 +17,7 @@ Environment=TZ=America/Los_Angeles
 
 Network=caddy.network
 
-Volume=/var/lib/sabnzbd:/config
+Volume=/var/config/sabnzbd:/config
 Volume=/var/truenas:/truenas
 
 SecurityLabelDisable=true
