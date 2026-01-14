@@ -6,7 +6,7 @@ After=var-truenas.mount
 
 [Container]
 ContainerName=sabnzbd
-Image=docker.io/linuxserver/sabnzbd:latest
+Image=lscr.io/linuxserver/sabnzbd:latest
 AutoUpdate=registry
 
 Label=caddy.subdomain=sabnzbd

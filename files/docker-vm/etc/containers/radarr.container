@@ -6,7 +6,7 @@ After=var-truenas.mount
 
 [Container]
 ContainerName=radarr
-Image=docker.io/linuxserver/radarr:latest
+Image=lscr.io/linuxserver/radarr:latest
 AutoUpdate=registry
 
 Label=caddy.subdomain=radarr

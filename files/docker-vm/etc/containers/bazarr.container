@@ -6,20 +6,16 @@ After=var-truenas.mount
 
 [Container]
 ContainerName=bazarr
-Image=docker.io/linuxserver/bazarr:latest
+Image=lscr.io/linuxserver/bazarr:latest
 AutoUpdate=registry
 
-Label=caddy.subdomain=bazarr
-Label=caddy.port=6767
-
+Environment=UMASK_SET=022
 Environment=PUID=1000
 Environment=PGID=1000
 Environment=TZ=America/Los_Angeles
 
-PublishPort=6767:6767
-
-Volume=/var/lib/bazarr:/config
-Volume=/var/truenas:/truenas
+Volume=/var/config/bazarr:/config
+Volume=/var/truenas/media:/media
 
 SecurityLabelDisable=true
 
