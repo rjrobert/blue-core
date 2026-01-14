@@ -16,10 +16,9 @@ modules:
 
   - type: script
     scripts:
-      - generate-caddyfile.sh
+      - generate-caddyfile.nu
 
   - type: systemd
     system:
       enabled:
         - caddy.socket
-        - idrac-fan-controller.service

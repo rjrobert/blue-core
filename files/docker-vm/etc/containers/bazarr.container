@@ -9,6 +9,8 @@ ContainerName=bazarr
 Image=lscr.io/linuxserver/bazarr:latest
 AutoUpdate=registry
 
+Label=caddy.port=6767
+
 Environment=UMASK_SET=022
 Environment=PUID=1000
 Environment=PGID=1000

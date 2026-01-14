@@ -13,8 +13,3 @@ modules:
     files:
       - source: plex/etc
         destination: /etc
-
-  - type: systemd
-    system:
-      enabled:
-        - plex.service
