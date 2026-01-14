@@ -24,6 +24,11 @@ cat >"$CADDYFILE" <<'EOF'
 EOF
 
 # Scan container files for caddy labels
+container_count=$(find "$CONTAINER_DIR" -maxdepth 1 -name "*.container" 2>/dev/null | wc -l)
+if [[ "$container_count" -eq 0 ]]; then
+  echo "Warning: No .container files found in $CONTAINER_DIR"
+fi
+
 for container_file in "$CONTAINER_DIR"/*.container; do
   [ -f "$container_file" ] || continue
 
@@ -40,4 +45,4 @@ EOF
   fi
 done
 
-echo "Generated $CADDYFILE with $(grep -c 'reverse_proxy' "$CADDYFILE") service entries"
+echo "Generated $CADDYFILE with $(grep -c 'reverse_proxy' "$CADDYFILE" || echo 0) service entries"
