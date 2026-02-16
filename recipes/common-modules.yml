@@ -23,8 +23,6 @@ modules:
         - neovim
         - helix
         - just
-        - distrobox
-        - nfs-utils
         - gcc
         - zoxide
 
@@ -42,7 +40,9 @@ modules:
         - cockpit.service
         - podman-auto-update.timer
         - bootc-fetch-apply-updates.timer
-        - var-truenas.mount
+        - var-mnt-atlas.mount
+        - zfs.target
+        - zfs-scrub-weekly@tank.timer
       disabled:
         - rpm-ostreed-automatic.timer
 

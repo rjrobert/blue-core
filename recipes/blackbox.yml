@@ -1,9 +1,9 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: blue-core-plex
+name: homelab-blackbox
 description: Plex media server image.
 
-base-image: ghcr.io/ublue-os/ucore-minimal
+base-image: ghcr.io/ublue-os/ucore-hci
 image-version: stable-nvidia-lts
 
 modules:
@@ -11,5 +11,5 @@ modules:
 
   - type: files
     files:
-      - source: plex/etc
+      - source: blackbox/etc
         destination: /etc

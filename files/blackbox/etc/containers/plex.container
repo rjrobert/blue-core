@@ -3,22 +3,23 @@ Description=Plex Media Server
 Wants=network-online.target
 After=network-online.target
 After=local-fs.target
-After=var-truenas.mount
+After=var-mnt-atlas.mount
+After=zfs.target
 
 [Container]
 ContainerName=plex
 Image=docker.io/plexinc/pms-docker:latest
 AutoUpdate=registry
 
-EnvironmentFile=/var/lib/plexmediaserver/plex.env
+EnvironmentFile=/mnt/tank/apps/plex/plex.env
 Environment=VERSION=docker
 
 Network=host
 
 AddDevice=nvidia.com/gpu=all
 
-Volume=/var/config/plexmediaserver:/config
-Volume=/var/truenas:/truenas
+Volume=/mnt/tank/apps/plex:/config
+Volume=/mnt/atlas:/truenas
 Tmpfs=/transcode
 
 SecurityLabelDisable=true

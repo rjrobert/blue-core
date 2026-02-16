@@ -27,8 +27,7 @@ jobs:
       matrix:
         recipe:
           - recipe.yml
-          - plex.yml
-          - docker-vm.yml
+          - blackbox.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
