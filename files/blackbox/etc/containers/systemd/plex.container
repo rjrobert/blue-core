@@ -24,6 +24,12 @@ Tmpfs=/transcode
 
 SecurityLabelDisable=true
 
+HealthCmd=curl -f http://localhost:32400/identity || exit 1
+HealthInterval=30s
+HealthTimeout=10s
+HealthStartPeriod=2m
+HealthRetries=3
+
 [Service]
 Restart=on-failure
 
