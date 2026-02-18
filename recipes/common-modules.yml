@@ -36,8 +36,9 @@ modules:
   - type: systemd
     system:
       enabled:
-        - podman.socket
         - cockpit.service
+        - podman.socket
+        - podman-restart.service
         - podman-auto-update.timer
         - bootc-fetch-apply-updates.timer
         - var-mnt-atlas.mount

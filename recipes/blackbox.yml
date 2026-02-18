@@ -9,6 +9,15 @@ image-version: stable-nvidia-lts
 modules:
   - from-file: common-modules.yml
 
+  - type: dnf
+    install:
+      packages:
+        - nvtop
+
+  - type: script
+    snippets:
+      - "firewall-offline-cmd --add-service=plex"
+
   - type: files
     files:
       - source: blackbox/etc
