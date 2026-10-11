@@ -25,6 +25,7 @@ modules:
         - just
         - gcc
         - zoxide
+        - nushell
 
   - type: script
     scripts:

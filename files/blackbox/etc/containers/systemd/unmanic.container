@@ -12,6 +12,7 @@ Image=docker.io/josh5/unmanic:latest
 AutoUpdate=registry
 
 PublishPort=8888:8888/tcp
+Environment=TZ=America/Los_Angeles
 Environment=PUID=1000
 Environment=PGID=1000
 AddDevice=nvidia.com/gpu=all

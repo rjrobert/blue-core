@@ -3,7 +3,7 @@
 name: homelab-blackbox
 description: Plex media server image.
 
-base-image: ghcr.io/ublue-os/ucore-hci
+base-image: ghcr.io/ublue-os/ucore
 image-version: stable-nvidia-lts
 
 modules:
