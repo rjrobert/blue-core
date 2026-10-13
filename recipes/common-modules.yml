@@ -25,11 +25,11 @@ modules:
         - just
         - gcc
         - zoxide
-        - nushell
 
   - type: script
     scripts:
       - install-eza.sh
+      - install-nushell.sh
 
   - type: chezmoi
     repository: https://github.com/rjrobert/dotfiles
